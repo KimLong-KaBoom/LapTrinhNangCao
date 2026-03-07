@@ -2,17 +2,19 @@
 public class Solution {
     public int firstLargest(int[] arr) {
         int ans = 0;
-        for (int i = 0; i < arr.length; ++i)
-            ans = Math.max(ans, arr[i]);
+        for (int j : arr) {
+            ans = Math.max(ans, j);
+        }
         return ans;
         
     }
     public int secondLargest(int[] arr) {
         int ans = -1;
-        int x = firstLargest(arr);
-        for (int i = 0; i < arr.length; ++i)
-            if (arr[i] != x)
-                ans = Math.max(ans, arr[i]);
+        int x;
+        x = firstLargest(arr);
+        for (int j : arr)
+            if (j != x)
+                ans = Math.max(ans, j);
 
         return ans;
     }
